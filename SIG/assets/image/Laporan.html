@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost/KP_Bank-BJB/laporan/index -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Fonts -->
+    <link href="./Laporan_files/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <!-- <link href="http://localhost/KP_Bank-BJB/assets/css/style.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" type="text/css" href="./Laporan_files/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="./Laporan_files/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./Laporan_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Laporan_files/bootstrap.min(1).css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Laporan </title>
+    <script src="./Laporan_files/jquery.min.js.download"></script>
+    <script src="./Laporan_files/bootstrap.min.js.download"></script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <div id="content" class="d-flex flex-column" style="min-height: 92vh; width:100%"><style type="text/css">
+    .dropbtn {
+        height: 100%;
+        background-color: #204d95;
+        color: white;
+        padding: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        border-left: 1px solid white;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: #204d95;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown {
+        background-color: #007bff;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #204d95; position: fixed; width: 100%; padding-left: 0; z-index: 100; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);">
+    <a class="navbar-brand" href="http://localhost/KP_Bank-BJB/dashboard" style="margin-left: 20px; color: white; margin-right: 20px;">Home</a>
+    <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <!-- DROPDOWN MENU NAVBAR-->
+    <div class="dropdown">
+        <button class="dropbtn" disabled="">RBB</button>
+        <div class="dropdown-content">
+            <a href="http://localhost/KP_Bank-BJB/rbb">Daftar RBB</a>
+                        <a href="http://localhost/KP_Bank-BJB/rbb/add">Tambah RBB</a>
+            <a href="http://localhost/KP_Bank-BJB/mutasi_rbb/Penyesuaian_RBB">Penyesuaian RBB</a>
+                    </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" disabled="">PKS</button>
+        <div class="dropdown-content">
+            <a href="http://localhost/KP_Bank-BJB/pks">Daftar PKS</a>
+                          <a href="http://localhost/KP_Bank-BJB/pks/create">Tambah PKS</a>
+                        <a href="http://localhost/KP_Bank-BJB/termin">Daftar Termin PKS</a>
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" disabled="">Invoice</button>
+        <div class="dropdown-content">
+            <a href="http://localhost/KP_Bank-BJB/Invoice">Histori Invoice</a>
+                        <a href="http://localhost/KP_Bank-BJB/Invoice/add">Invoice Baru</a>
+                    </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle" href="http://localhost/KP_Bank-BJB/laporan/index#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration: none; margin-right: 70px; color: white;">
+                cika            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item" href="http://localhost/KP_Bank-BJB/auth/logout"><img src="./Laporan_files/logout.png" style="width: 15px;"><b> Logout</b></a>
+            </div>
+        </div>
+    </div>
+</nav><br><br><br>      <br>  
+    <div style="float: left;">
+    <div class="container-half" style="margin-left: 10px;">
+      <h2>  Laporan Gabungan - Pembayaran</h2>
+                    <div style="float: left;">
+            <form action="http://localhost/KP_Bank-BJB/laporan/laporan_pdf" method="post">
+                  <input type="hidden" name="keyword" value="test">
+                  <input type="submit" name="submit" value="Print" class="btn btn-danger">
+            </form>
+                  
+            </div><div style="float: left; margin-left: 10px;">
+                  
+            <form action="http://localhost/KP_Bank-BJB/laporan/exportAsExcel" method="post">
+                  <input type="hidden" name="keyword" value="test">
+                  <input type="submit" name="submit" value="Export as Excel" class="btn btn-success">
+            </form>
+            </div>
+<!--                   <a href="http://localhost/KP_Bank-BJB/laporan/laporan_pdf" style="margin-right: 5px;" class="btn btn-danger">Print Laporan</a>
+                  <a href="http://localhost/KP_Bank-BJB/laporan/exportAsExcel" class="btn btn-success">Save as Excel</a> -->
+            </div>
+    <div class="container-half right" style="float: left; width: 48%;">
+        <div class="form-group">
+            <form method="post" action="http://localhost/KP_Bank-BJB/laporan/index" class="form-inline" style="float: right;">
+                <input type="text" placeholder="Kata kunci" name="searchById" id="searchById" class="form-control" style="width: auto; " value="test">
+            <span class=" input-group-btn">
+                <input type="submit" name="Search" class="btn btn-primary" value="Cari">
+            
+        </span></form></div>
+    </div>
+</div>
+<div class="table-responsive">
+      <table class="table table-striped table-hover table-bordered">
+            </table><table class="table table-striped table-hover table-bordered">
+                  <thead style="background-color: #204d95; color: white;">
+                        <tr><td colspan="5">RENCANA BISNIS BANK</td>
+                        <td colspan="7">PERJANJIAN KERJASAMA</td>
+                        <td colspan="4">PEMBAYARAN</td>
+                  </tr></thead>
+                  <thead style="background-color:  #b5c8e1; color: black;">
+                        <tr><th>Kode RBB</th>
+                        <th>Program Kerja</th>
+                        <th>Anggaran</th>
+                        <th>GL</th>
+                        <th>Nama Rek</th>
+<!--                         <th>Mutasi RBB</th>
+                        <th>Sisa Anggaran</th> -->
+                        <!-- PKS -->
+                        <th>Nomor PKS</th>
+                        <th>Jenis</th>
+                        <th>Kode Project</th>
+                        <th>Nama Project</th>
+                        <th>tanggal PKS</th>
+                        <th>Nominal PKS</th>
+                        <th>Nama Vendor</th>
+<!--                         <th>Mutasi PKS</th>
+                        <th>Sisa Anggaran</th> -->
+                        <!-- INVOICE -->
+                        <th>Invoice</th>
+                        <th>Tahap</th>
+                        <th>Nominal</th>
+                        <th>Tanggal Invoice</th>
+                  </tr></thead>
+                  <!-- ++++++++++++++++++  RBB   ++++++++++++++++++ -->
+                  <!-- 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.3</td>
+                              <td rowspan="1">ga ada</td>
+                              <td rowspan="1">26782</td>
+                              <td rowspan="1">952020</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>26782</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">2</td>
+                              <td rowspan="1">test</td>
+                              <td rowspan="1">3000</td>
+                              <td rowspan="1">952020</td>
+                              <td rowspan="1">Ultra Milk</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>3000</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.2</td>
+                              <td rowspan="1">Percobaan 3</td>
+                              <td rowspan="1">3000000</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>3000000</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.2</td>
+                              <td rowspan="1">Percobaan 3</td>
+                              <td rowspan="1">3000000</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>3000000</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: pks</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: Laporan/laporan.php</p>
+<p>Line Number: 68</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\views\Laporan\laporan.php<br />
+			Line: 68<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\application\controllers\Laporan.php<br />
+			Line: 43<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: D:\Xampp2\htdocs\KP_Bank-BJB\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div> -->
+                       <!--  <tr>
+                              <td rowspan="1">PGO1.1.1.1</td>
+                              <td rowspan="1">RBB 1</td>
+                              <td rowspan="1">0</td>
+                              <td rowspan="1">801101</td>
+                              <td rowspan="1">test</td> -->
+
+                              <!-- +++++++++++++++++++++++ PKS +++++++++++++++++++++++++++++ -->
+                              <!-- <td>-</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> -->
+<!-- </tr>
+</tr> -->
+
+
+                    <tbody><tr>
+                        <td>PGO1.1.1.3</td>
+                        <td>ga ada</td>
+                        <td>26782</td>
+                        <td>952020</td>
+                        <td>test</td>
+                        <td>003/GOP-KON/2023</td>
+                        
+                        <td>121212</td>
+                        <td>rewrwer</td>
+                        <td>Penyuluhan</td>
+                        <td>2020-08-25</td>
+                        <td>500</td>
+                        <td>000000</td>
+
+                        <td>GTGTRasasasa</td>
+                        <td>1</td>
+                        <td>40</td>
+                        <td>2020-01-01</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>2</td>
+                        <td>test</td>
+                        <td>3000</td>
+                        <td>952020</td>
+                        <td>Ultra Milk</td>
+                        <td>4442aaaa</td>
+                        
+                        <td>5f4347371f72f</td>
+                        <td>3801/RBB/RBB/20-A/</td>
+                        <td>Test</td>
+                        <td>2019-12-01</td>
+                        <td>300</td>
+                        <td>vendor 10</td>
+
+                        <td>GTGT4R24aaaa</td>
+                        <td>1</td>
+                        <td>30</td>
+                        <td>2020-08-11</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>aaaaaa</td>
+                        <td>6</td>
+                        <td>50000</td>
+                        <td>2020-08-25</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>aaaa</td>
+                        <td>5</td>
+                        <td>10000</td>
+                        <td>2020-08-25</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>aa</td>
+                        <td>3</td>
+                        <td>50000</td>
+                        <td>2020-08-25</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>aaaaaaaa</td>
+                        <td>8</td>
+                        <td>10000</td>
+                        <td>2020-08-25</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>aaaaa</td>
+                        <td>7</td>
+                        <td>40000</td>
+                        <td>2020-08-25</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>aaa</td>
+                        <td>4</td>
+                        <td>40000</td>
+                        <td>2020-08-25</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>a</td>
+                        <td>2</td>
+                        <td>10000</td>
+                        <td>2020-08-26</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.2</td>
+                        <td>Percobaan 3</td>
+                        <td>3000000</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>002/GOP-KON/2023</td>
+                        
+                        <td>5f3399e30e418</td>
+                        <td>0002/RBB/RBB/20-A/II</td>
+                        <td>Penyuluhan</td>
+                        <td>2020-08-25</td>
+                        <td>2500000</td>
+                        <td>000000</td>
+
+                        <td>GTGT4R2</td>
+                        <td>1</td>
+                        <td>1500000</td>
+                        <td>2020-08-26</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.2</td>
+                        <td>Percobaan 3</td>
+                        <td>3000000</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>002/GOP-KON/2023</td>
+                        
+                        <td>5f3399e30e418</td>
+                        <td>0002/RBB/RBB/20-A/II</td>
+                        <td>Penyuluhan</td>
+                        <td>2020-08-25</td>
+                        <td>2500000</td>
+                        <td>000000</td>
+
+                        <td>GTGT4R21</td>
+                        <td>2</td>
+                        <td>1000000</td>
+                        <td>2020-08-27</td>
+
+                  </tr>
+
+                                    <tr>
+                        <td>PGO1.1.1.1</td>
+                        <td>RBB 1</td>
+                        <td>0</td>
+                        <td>801101</td>
+                        <td>test</td>
+                        <td>001/GOP-KON/2020</td>
+                        
+                        <td>5f339e6066413</td>
+                        <td>0001/RBB/RBB/20-A/I</td>
+                        <td>test</td>
+                        <td>2020-08-25</td>
+                        <td>500000</td>
+                        <td>000000</td>
+
+                        <td>4444444</td>
+                        <td>1</td>
+                        <td>200000</td>
+                        <td>2020-08-29</td>
+
+                  </tr>
+
+                              </tbody></table>
+</div>
+</div> <!-- END CONTAINER -->
+<footer id="footer" class="bg-white">
+    <div class="container bg-white" style="margin-top: 20px; margin-bottom: 20px; width: 100%;">
+        <div class="copyright text-center">
+            <span>Copyright © Bank BJB 2020</span>
+        </div>
+    </div>
+
+    <div class="bluefooter"></div>
+    <div class="lightbluefooter"></div>
+    <div class="yellowfooter"></div>
+</footer>
+
+
+
+<script src="./Laporan_files/bootstrap.bundle.min.js.download"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+
+<script>
+    $(document).ready(function() {
+        $(".dropdown-toggle").dropdown();
+    });
+</script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script src="./Laporan_files/popper.min.js.download" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./Laporan_files/bootstrap.min.js(1).download" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body></html>
