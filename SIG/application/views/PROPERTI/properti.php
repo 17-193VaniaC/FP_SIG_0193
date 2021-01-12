@@ -13,13 +13,14 @@
 		position: absolute;
 		/*top: 0; bottom: 0; width: 100%; */
 		height: 500px;
+    /*width: 550px;*/
 		width: 100%;
 
 	}#instructions {
   position: absolute;
   margin: 5px;
   width: 30%;
-  top: 0;
+  top: 10%;
   bottom: 20%;
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -37,14 +38,18 @@
 </style>
 </head>
 <body><br><br><br>
-<div class="container">
+<div class="" style="margin-left: 50px;">
 	<div class="row" style="width: 100%;"><br>	
-		<div class="col" style="text-align: left; width: 100%;">
+    <div class="col" style=" width: 100%;">
+      <i style="text-align: center;">Klik peta untuk mendapatkan navigasi dari lokasi anda ke properti ini</i>
+      <br>
 			<div id="map"></div>
 			<div id="instructions">
 				
 			</div>
 		</div>
+    <div class="col" style=" width: 100%;">
+
 		
 				<?php
 						if(empty($Detail->IMG)):
@@ -63,8 +68,12 @@
 				Rp <?= $Detail->HARGA;?>
 				<br><br>
 				<?= $Detail->DESKRIPSI;?>
+      </div>
 		</div>
-		<div class="image roll"></div>
+    <div class="image roll"></div>
+		<!-- <div id="ps" class=""></div> -->
+    <input type="hidden" id="psla" name="">
+    <input type="hidden" id="pslo" name="">
 <!-- 		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 		    <div class="carousel-inner">
 		  	    <div class="carousel-item active">
@@ -106,7 +115,8 @@
 </body>
 </html>
 <script>
-	var lo = document.getElementById("LOCLO");
+    var co;
+	  var lo = document.getElementById("LOCLO");
     var la = document.getElementById("LOCLA");
     var lo_ = lo.textContent;
     var la_ = la.textContent;
@@ -204,7 +214,7 @@
         req.send();
       }
 
-      map.on('load', function () {
+map.on('load', function () {
         getRoute(start);
 
         map.addLayer({
@@ -234,21 +244,28 @@
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, alert('error geolocation'));
-    } else { 
+        navigator.geolocation.getCurrentPosition(showPosition);
+      }
+    else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
+function getthepos(positions) {
+  return positions;
+}
 
 function showPosition(position) {
- co = [position.coords.longitude, position.coords.latitude];
- return co[0];
- // alert(co);
+  document.getElementById("pslo").value = position.coords.longitude;
+  document.getElementById("psla").value = position.coords.latitude;
 }
-        map.on('click', function (e) {
+          getLocation();
+
+      map.on('click', function (e) {
           var coordsObj = e.lngLat;
           canvas.style.cursor = '';
-          var coords = getLocation();
+          var las = document.getElementById('psla').value;
+          var los = document.getElementById('pslo').value;
+          var coords = [los, las];
           var end = {
             'type': 'FeatureCollection',
             'features': [

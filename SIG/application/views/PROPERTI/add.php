@@ -26,9 +26,9 @@ background: #fff;}
 					<!-- FLASH MESSAGE -->
 					<?php if ($this->session->flashdata('success')) { ?>
 						<?php
-						echo "<div class='alert alert-success'>";
+						// echo "<div class='alert alert-success'>";
 						echo $this->session->flashdata('success');
-						echo "</div>";
+						// echo "</div>";
 						?>
 					<?php } ?>
 					<?php if ($this->session->flashdata('failed')) { ?>

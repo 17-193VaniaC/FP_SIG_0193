@@ -108,10 +108,10 @@ class Properti_model extends CI_Model
         if (!empty($that)) {
             $this->db->select('*');
             $this->db->like('ID_P', $that, 'both');
-            // $this->db->order_by('INPUT_DATE', 'desc');
+            $this->db->order_by('input_date', 'desc');
             return $this->db->get('properti', $limit, $start)->result();
         }
-        // $this->db->order_by('INPUT_DATE', 'desc');
+        $this->db->order_by('input_date', 'desc');
         $response = $this->db->get('properti', $limit, $start)->result();
         return $response;
 
@@ -159,8 +159,6 @@ class Properti_model extends CI_Model
 
     public function update()
     {
-        
-        $image = addslashes(file_get_contents($_FILES['pict2']['tmp_name']));
         $post = $this->input->post();
         $this->ID_P = $post['id_prop'];
         $this->NAMA_P = $post["n_properti"];
@@ -171,9 +169,11 @@ class Properti_model extends CI_Model
         $this->LUAS = $post["size"];
         $this->LATITUDE = $post["lat"];
         $this->LONGITUDE = $post["long"];
-        $this->IMG = $image;
-
-
+        if(file_get_contents($_FILES['pict2']['tmp_name'])){
+            $image = addslashes(file_get_contents($_FILES['pict2']['tmp_name']));
+            $this->IMG = $image;
+            
+        }
         return $this->db->update($this->_table, $this, array('ID_P' => $post['id_prop']));
     }
 
