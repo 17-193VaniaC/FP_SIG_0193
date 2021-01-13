@@ -1,4 +1,6 @@
 # Sistem Informasi Properti
+Link Laporan [PPT Laporan](https://docs.google.com/presentation/d/19T1O-rqy3phUvxHomFJ-nbU3z4WbHPmaVm7vxyCNFHw/edit?usp=sharing)
+
 ## Admin:
 **username :** Admin **Password :** 111111
 1. Menambah data properti
