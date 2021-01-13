@@ -153,8 +153,8 @@ background: #fff;}
 													
 												</td>
 												<td>
-												<a class="btn btn-primary" style="color: white;" onclick="getLocation()"><strong>Lokasi Anda</strong></a>
-													
+												<a class="btn btn-primary" style="color: white;" onclick="getLocation()"><strong>Gunakan Lokasi Anda</strong></a>
+												atau pilih pada peta
 											<br><br>
 												</td>
 											</tr>
